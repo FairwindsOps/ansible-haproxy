@@ -1,0 +1,79 @@
+# # Example of vars to be included in ansible/vars/{env}/{env}.yml
+#
+# ---
+# # defaults file for haproxy
+# haproxy_version: '1.6'
+#
+# haproxy_maxconn: 4096
+#
+# haproxy_syslog_host: '127.0.0.1'
+# haproxy_syslog_facility: 'local0'
+# haproxy_log_level: 'info'
+# haproxy_debug: false
+#
+# haproxy_connect_timeout: '5s'
+# haproxy_client_timeout: '10s'
+# haproxy_server_timeout: '10s'
+#
+# haproxy_retries: 3
+# haproxy_balance: 'roundrobin'
+#
+
+## Backend
+
+#haproxy_backends:
+#  - name:
+#    disabled:
+#    description:
+#    balance:
+#    log:
+#    retries:
+#    contimeout:
+#    http-send-name-header:
+#    http-check-expect:
+#        - condition
+#    acl:
+#      - name:
+#        condition:
+#    servers:
+#      - name:
+#        ip:
+#        port:
+#        maxconn:
+#        params:
+#              - param1
+#    options:
+#        - forwardfor
+
+## Frontend
+
+#haproxy_frontends:
+#  - name:
+#    ip:
+#    bind:
+#      - 192.168.1.1:80
+#      - 192.168.1.2:81
+#    ssl:
+#      cert: /etc/ssl/private/cert.pem
+#      ciphers: 'RC4-SHA:AES128-SHA:AES:!ADH:!aNULL:!DH:!EDH:!eNULL'
+#    maxconn:
+#    monitor:
+#      uri:
+#      fail:
+#        - <condition>
+#    acl:
+#      - name:
+#        condition:
+#    http-request:
+#      - action:
+#        param:
+#        condition:
+#    rate-limit-sessions:
+#    block:
+#        -
+#    options:
+#        - forwardfor
+#    default_backend:
+#    use_backend:
+#      - name:
+#        condition:

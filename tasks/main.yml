@@ -1,0 +1,15 @@
+---
+
+- name: haproxy | add the ppa repo
+  apt_repository: repo="ppa:vbernat/haproxy-{{haproxy_version}}" state='present'
+
+- name: haproxy | install haproxy
+  apt: name=haproxy state=present update_cache=yes
+
+- name: haproxy | overlay haproxy.cfg
+  template: src='haproxy.cfg.j2' dest='/etc/haproxy/haproxy.cfg' owner='root' group='root' mode='0644'
+  notify:
+    - restart haproxy
+
+- name: haproxy | start haproxy service
+  service: name=haproxy state=started enabled=yes
