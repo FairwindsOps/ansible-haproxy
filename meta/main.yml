@@ -2,7 +2,7 @@
 galaxy_info:
   author: Jason Bornhoft (credit to Bryan Traywick)
   description: Ansible role for HAProxy implementation
-  company: ReactiveOps Inc.
+  company: FairwindsOps Inc.
   license: MIT
   min_ansible_version: 1.2
   platforms:
